@@ -1,0 +1,21 @@
+#!/bin/bash
+
+dir=$(dirname $0);
+version=$(echo $dir/Yellow -v)
+
+cp $dir/control $dir/control.bak
+mkdir "$dir/Yellow for Linux";
+mkdir "$dir/Yellow for Linux/usr";
+mkdir "$dir/Yellow for Linux/usr/bin";
+mkdir "$dir/Yellow for Linux/DEBIAN";
+cp $dir/Yellow "$dir/Yellow for Linux/usr/bin/";
+cp $dir/Yellow_Shell "$dir/Yellow for Linux/usr/bin/";
+printf "\nVersion: $($(echo $version))" >> "$dir/control";
+printf "\n" >> "$dir/control";
+cp "$dir/control" "$dir/Yellow for Linux/DEBIAN/";
+chmod -R 00755 $dir/Yellow\ for\ Linux/DEBIAN
+sudo dpkg --build $dir/Yellow\ for\ Linux;
+rm $dir/control
+mv $dir/control.bak $dir/control
+rm -rf $dir/Yellow\ for\ Linux;
+sudo dpkg -i $dir/*.deb

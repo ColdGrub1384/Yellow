@@ -1,0 +1,100 @@
+#!/usr/bin/python
+
+import sys
+import py_compile
+import os
+import os.path
+
+version = 0.1
+
+
+# Check for arguments
+if (len(sys.argv) == 1):
+    sys.exit ("\nUSAGE: [OPTION] [ARGUMENT]\n\nOPTIONS:\n\n-t: [file to translate] [file to create] Translate file and create executable\n-r: [file to run] Translate file and run it\n-s: Run Yellow Shell\n-v: Return version")
+    
+if (sys.argv[1] == "-v"):
+    print version
+    exit()
+    
+print "\nWelcome to Yellow programming language by ColdGrub1384"
+
+# Open file
+file = ""
+if(sys.argv[1] != "-s"):
+    file = sys.argv[2]
+    file = open(file,"r").read()
+else:
+    file = file
+    
+if(sys.argv[1] != "-s"):
+    print("Translating "+file+"...\n\n")
+    
+code = file.split("\n")
+
+currentLine = 0
+
+global translated
+translated = ""
+
+while (currentLine < len(code)):
+
+    # Shell
+    if(sys.argv[1] == "-s"):
+        code = ["",""]
+        currentLine = 0
+        code[currentLine] = raw_input(">>> ")
+    
+    # Translate
+
+    
+    withoutSpace = code[currentLine].replace(" ","");
+    if (withoutSpace.startswith("//")):
+        code[currentLine] = ""
+    
+    # Comments
+    code[currentLine] = code[currentLine].replace("/*","'''")
+    code[currentLine] = code[currentLine].replace("*/","'''")
+    
+    # Syntax
+    
+    if (code[currentLine].endswith("{") and code[currentLine+1].startswith("    ")):
+        code[currentLine+1] = code[currentLine+1].replace("    ","")
+    
+    if (code[currentLine].endswith("}") or code[currentLine].endswith("{")):
+        if (code[currentLine+1].startswith("else")):
+            print ""
+        else:
+            if (code[currentLine+1].startswith("    ")):
+                code[currentLine] = code[currentLine]+"; "+code[currentLine+1]
+                code[currentLine+1] = ""
+            else:
+                code[currentLine] = code[currentLine]+code[currentLine+1]
+                code[currentLine+1] = ""
+        
+            if (currentLine+2 < len(code)):
+                if (code[currentLine+2].startswith("}")):
+                    code[currentLine] = code[currentLine]+code[currentLine+2]
+                    code[currentLine+2] = ""
+                    
+    code[currentLine] = code[currentLine].replace("{","(")
+    code[currentLine] = code[currentLine].replace("}",")")
+    #code[currentLine] = code[currentLine].replace("    ","\n")
+    
+    # Encodage
+    code[currentLine] = code[currentLine].replace("\{","{")
+    code[currentLine] = code[currentLine].replace("\}","}")
+    
+    if(sys.argv[1] == "-s"):
+        exec code[currentLine]
+    translated = translated+"\n"+code[currentLine]
+    currentLine = currentLine+1
+
+# Check for arguments
+for option in sys.argv:
+    if(option == "-t"):
+        script = open(sys.argv[3],"w+")
+        script.write("#!/usr/bin/python\n\n"+translated)
+        os.chmod(sys.argv[3], 0o777)
+
+    if(option == "-r"):
+        exec translated

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dir=$(dirname $0)
+
+mkdir "$dir/Yellow for Mac"
+mkdir "$dir/Yellow for Mac/ROOT"
+mkdir "$dir/Yellow for Mac/ROOT/usr"
+mkdir "$dir/Yellow for Mac/ROOT/usr/bin"
+cp $dir/Yellow "$dir/Yellow for Mac/ROOT/usr/bin/"
+cp $dir/Yellow_Shell "$dir/Yellow for Mac/ROOT/usr/bin/"
+pkgbuild --root "$dir/Yellow for Mac/ROOT" --identifier ch.ada.yellow --version $($dir/Yellow -v) $dir/Yellow.pkg
+rm -rf $dir/Yellow\ for\ Mac
+open $dir/Yellow.pkg
