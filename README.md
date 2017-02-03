@@ -10,9 +10,9 @@
 
 ## Installation
 ### Mac
-    $ git clone https://github.com/ColdGrub1384/Yellow.git; cd Yellow; ./Build_for_Mac;
+    $ git clone https://github.com/ColdGrub1384/Yellow.git; Yellow/Build_for_Mac;
 ### Linux
-    $ git clone https://github.com/ColdGrub1384/Yellow.git; cd Yellow; ./Build_for_Linux;
+    $ git clone https://github.com/ColdGrub1384/Yellow.git; Yellow/Build_for_Linux;
     
 ### Windows
 Clone repository, open ```Yellow``` and remove ```#!/usr/bin/python```, then you can rename ```Yellow``` to ```Yellow.py``` and run it with Python.<br/>
