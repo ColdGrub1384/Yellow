@@ -1,7 +1,7 @@
 <center>
 # Yellow
 ## Programming language
-<img src="/Users/adrian/Desktop/Yellow/logo.png" width="300"><br/>
+<img src="https://raw.githubusercontent.com/ColdGrub1384/Yellow/master/logo.png" width="300"><br/>
 ![Dependecies](https://img.shields.io/badge/dependecies-Python-blue.svg)<br/>
 ![Compilation](https://img.shields.io/badge/Compilation-don't%20need-green.svg)<br/>
 ![Platforms](https://img.shields.io/badge/Platforms-macOS%20%2F%20Linux-red.svg)<br/>
