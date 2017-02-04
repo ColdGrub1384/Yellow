@@ -1,7 +1,7 @@
 <center>
 # Yellow
 ## Programming language
-<img src="/Users/adrian/Desktop/Yellow/logo.png" width="300"><br/>
+<img src="https://raw.githubusercontent.com/ColdGrub1384/Yellow/master/logo.png" width="300"><br/>
 ![Dependecies](https://img.shields.io/badge/dependecies-Python-blue.svg)<br/>
 ![Compilation](https://img.shields.io/badge/Compilation-don't%20need-green.svg)<br/>
 ![Platforms](https://img.shields.io/badge/Platforms-macOS%20%2F%20Linux-red.svg)<br/>
@@ -10,9 +10,9 @@
 
 ## Installation
 ### Mac
-    $ git clone https://github.com/ColdGrub1384/Yellow.git; cd Yellow; ./Build_for_Mac;
+    $ git clone https://github.com/ColdGrub1384/Yellow.git; Yellow/Build_for_Mac;
 ### Linux
-    $ git clone https://github.com/ColdGrub1384/Yellow.git; cd Yellow; ./Build_for_Linux;
+    $ git clone https://github.com/ColdGrub1384/Yellow.git; Yellow/Build_for_Linux;
     
 ### Windows
 Clone repository, open ```Yellow``` and remove ```#!/usr/bin/python```, then you can rename ```Yellow``` to ```Yellow.py``` and run it with Python.<br/>
@@ -57,6 +57,7 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
             "We have the same name!"
         }
     else:
+<<<<<<< HEAD
         if {name == "Windows"}:
             console.failed {
                 "Fuck you"
@@ -79,3 +80,8 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
     
     \\n
     \\n
+=======
+        print{"1 != 1"}
+        print{"This is a second line of code in a condition"}
+     
+>>>>>>> origin/master
