@@ -57,7 +57,6 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
             "We have the same name!"
         }
     else:
-<<<<<<< HEAD
         if {name == "Windows"}:
             console.failed {
                 "Fuck you"
@@ -80,8 +79,6 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
     
     \\n
     \\n
-=======
-        print{"1 != 1"}
-        print{"This is a second line of code in a condition"}
+    print{"1 != 1"}
+    print{"This is a second line of code in a condition"}
      
->>>>>>> origin/master
