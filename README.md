@@ -15,6 +15,7 @@
     $ git clone https://github.com/ColdGrub1384/Yellow.git; Yellow/Build_for_Linux;
     
 ### Windows
+Yellow is not coded for Windows, but if you modify scripts for Windows, you can run them as Python script:<br/>
 Clone repository, open ```Yellow``` and remove ```#!/usr/bin/python```, then you can rename ```Yellow``` to ```Yellow.py``` and run it with Python.<br/>
 NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```python [path_to_Yellow] -s``` to open it.
 ## Usage
