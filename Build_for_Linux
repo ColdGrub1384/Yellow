@@ -10,6 +10,7 @@ mkdir "$dir/Yellow for Linux/usr/bin";
 mkdir "$dir/Yellow for Linux/DEBIAN";
 cp $dir/Yellow "$dir/Yellow for Linux/usr/bin/";
 cp $dir/Yellow_Shell "$dir/Yellow for Linux/usr/bin/";
+cp $dir/Colors.py "$dir/Yellow for Linux/usr/bin/";
 printf "\nVersion: $($(echo $version))" >> "$dir/control";
 printf "\n" >> "$dir/control";
 cp "$dir/control" "$dir/Yellow for Linux/DEBIAN/";

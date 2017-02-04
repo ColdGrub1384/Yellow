@@ -4,9 +4,31 @@ import sys
 import py_compile
 import os
 import os.path
+from os.path import expanduser
 
-version = 0.1
+version = "0.2"
+path = os.path.dirname(os.path.realpath(__file__))
 
+def header(str):
+    print "\033[95m"+str+"\033[0m"
+   
+def okBlue(str):
+    print "\033[94m"+str+"\033[0m"
+    
+def okGreen(str):
+    print "\033[92m"+"\033[0m"
+    
+def warning(str):
+    print "\033[93m"+str+"\033[0m"
+    
+def failed(str):
+     print "\033[91m"+str+"\033[0m"
+        
+def bold(str):
+    print "\033[1m"+str+"\033[0m"
+
+def underline(str):
+    print "\033[4m"+"\033[0m"
 
 # Check for arguments
 if (len(sys.argv) == 1):
@@ -27,7 +49,7 @@ else:
     file = file
     
 if(sys.argv[1] != "-s"):
-    print("Translating "+file+"...\n\n")
+    print("Translating file...\n\n")
     
 code = file.split("\n")
 
@@ -37,6 +59,11 @@ global translated
 translated = ""
 
 while (currentLine < len(code)):
+    
+    # Setup files
+    home = expanduser("~")
+    if (not os.path.exists(home+"/Library/Yellow/")):
+        os.mkdir(home+"/Library/Yellow/")
 
     # Shell
     if(sys.argv[1] == "-s"):
@@ -78,7 +105,26 @@ while (currentLine < len(code)):
                     
     code[currentLine] = code[currentLine].replace("{","(")
     code[currentLine] = code[currentLine].replace("}",")")
-    #code[currentLine] = code[currentLine].replace("    ","\n")
+    
+    # Functions / Variables
+    code[currentLine] = code[currentLine].replace("console","print")
+    code[currentLine] = code[currentLine].replace("keyboard","raw_input") 
+    code[currentLine] = code[currentLine].replace("_version","\""+version+"\"")
+    code[currentLine] = code[currentLine].replace(repr("\\n").replace("'",""),"print \"\\n\"")
+    code[currentLine] = code[currentLine].replace("\print","print")
+    code[currentLine] = code[currentLine].replace("$","import os; os.system")
+    code[currentLine] = code[currentLine].replace("log","from os.path import expanduser;logfile = open(expanduser(\"~\")+\"/Library/Yellow/"+os.path.basename(sys.argv[2])+"-log.txt"+"\",\"w+\"); logfile.write")
+    code[currentLine] = code[currentLine].replace("Logclose","logfile.close")
+    code[currentLine] = code[currentLine].replace("_LOG","\""+home+"/Library/Yellow/"+os.path.basename(sys.argv[2])+"-log.txt"+"\"")
+    
+    ## Colors
+    code[currentLine] = code[currentLine].replace("print.header","header")
+    code[currentLine] = code[currentLine].replace("print.okBlue","okBlue")
+    code[currentLine] = code[currentLine].replace("print.okGreen","okGreen")
+    code[currentLine] = code[currentLine].replace("print.warning","warning")
+    code[currentLine] = code[currentLine].replace("print.failed","failed")
+    code[currentLine] = code[currentLine].replace("print.bold","bold")
+    code[currentLine] = code[currentLine].replace("print.underline","underline")
     
     # Encodage
     code[currentLine] = code[currentLine].replace("\{","{")
@@ -93,7 +139,8 @@ while (currentLine < len(code)):
 for option in sys.argv:
     if(option == "-t"):
         script = open(sys.argv[3],"w+")
-        script.write("#!/usr/bin/python\n\n"+translated)
+        colors = open(path+"/Colors.py","r")
+        script.write("#!/usr/bin/python\n\n"+colors.read()+"\n"+translated)
         os.chmod(sys.argv[3], 0o777)
 
     if(option == "-r"):

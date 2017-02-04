@@ -32,14 +32,50 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
     /* Multiline
     comment*/
 
-    print {
-        "Hello World"
+    console {
+        "Hello World from Yellow "+_version
+    }
+    \\n
+    name = keyboard{
+        "What's your name? "
     }
 
-    if {1 == 1}:
-        print{"1 == 1"}
-        print{"This is a second line of code in a condition"}
+    log{
+        "Question asked!"
+    }
+
+    Logclose{}
+
+    from sys import platform
+    if {platform == "linux" or platform == "linux2" or platform == "darwin"}:
+        ${"clear"}
     else:
-        print{"1 != 1"}
-        print{"This is a second line of code in a condition"}
-     
+        ${"cls"}
+
+    if {name == "Adrian"}:
+        console.okGreen {
+            "We have the same name!"
+        }
+    else:
+        if {name == "Windows"}:
+            console.failed {
+                "Fuck you"
+            }
+        
+        else:
+            console.okBlue {
+                "My name is Adrian"
+            }
+ 
+    console{_LOG}
+
+    LOGFILE = open{
+        _LOG,"r"
+    }
+
+    console {
+        "LOG:\n"+LOGFILE.read{}
+    }
+    
+    \\n
+    \\n
