@@ -3,9 +3,9 @@
 /* Multiline
 comment*/
 
-console {
+/*console {
     "Hello World from Yellow "+_version
-}
+}*/
 \\n
 name = keyboard{
     "What's your name? "
@@ -39,11 +39,9 @@ else:
         }
  
 console{_LOG}
-
 LOGFILE = open{
     _LOG,"r"
 }
-
 console {
     "LOG:\n"+LOGFILE.read{}
 }
