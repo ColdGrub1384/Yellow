@@ -12,7 +12,7 @@ shell = False
 
 # Check for arguments
 if (len(sys.argv) == 1):
-    sys.exit ("\nUSAGE: [OPTION] [ARGUMENT]\n\nOPTIONS:\n\n-t: [file to translate] [file to create] Translate file and create executable\n-r: [file to run] Translate file and run it\n-s: Run Yellow Shell\n-v: Return version\n-m: [Yellow file] Make app for Mac from Yellow script")
+    sys.exit ("\nUSAGE: [OPTION] [ARGUMENT]\n\nOPTIONS:\n\n-t: [file to translate] [file to create] Translate file and create executable\n-r: [file to run] Translate file and run it\n-s: Run Yellow Shell\n-v: Return version\n")
     
 if (sys.argv[1] == "-v"):
     print version
