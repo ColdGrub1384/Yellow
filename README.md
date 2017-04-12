@@ -79,5 +79,5 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
     \\n
     \\n
     print{"1 != 1"}
-    print{"This is a second line of code in a condition"}
+    
      
