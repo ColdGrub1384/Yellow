@@ -6,7 +6,7 @@ import os
 import os.path
 from os.path import expanduser
 
-version = "1.0"
+version = "1.1"
 path = os.path.dirname(os.path.realpath(__file__))
 shell = False
 

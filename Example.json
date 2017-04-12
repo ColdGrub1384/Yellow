@@ -1,0 +1,51 @@
+// Comment
+
+/* Multiline
+comment*/
+
+console {
+    "Hello World from Yellow "+_version
+}
+\\n
+name = keyboard{
+    "What's your name? "
+}
+
+log{
+    "Question asked!"
+}
+
+Logclose{}
+
+from sys import platform
+if {platform == "linux" or platform == "linux2" or platform == "darwin"}:
+    ${"clear"}
+else:
+    ${"cls"}
+
+if {name == "Adrian"}:
+    console.okGreen {
+        "We have the same name!"
+    }
+else:
+    if {name == "Windows"}:
+        console.failed {
+            "Fuck you"
+        }
+    
+    else:
+        console.okBlue {
+            "My name is Adrian"
+        }
+
+console{_LOG}
+
+LOGFILE = open{
+    _LOG,"r"
+}
+
+console {
+    "LOG:\n"+LOGFILE.read{}
+}
+
+\\n
