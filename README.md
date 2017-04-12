@@ -3,7 +3,8 @@
 <img src="https://raw.githubusercontent.com/ColdGrub1384/Yellow/master/logo.png" width="300"></img><br/>
 ![Dependecies](https://img.shields.io/badge/Dependecies-Python-blue.svg)<br/>
 ![Compilation](https://img.shields.io/badge/Compilation-don't%20need-green.svg)<br/>
-![Platforms](https://img.shields.io/badge/Platforms-macOS%20%2F%20Linux-red.svg)<br/>
+![Platform](https://img.shields.io/badge/Platform-macOS-red.svg)<br/>
+![Platform](https://img.shields.io/badge/Platform-Linux-red.svg)<br/>
 ![Windows](https://img.shields.io/badge/Run%20on%20Windows-From%20Python%20script-yellow.svg)
 
 ## Installation
