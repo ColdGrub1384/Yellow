@@ -57,7 +57,7 @@ while (currentLine < len(code)):
         # Translate
 
         if(sys.argv[1] == "-s"):
-            colors = open(path+"/Colors.py","r")
+            colors = open(path+"/PYClasses/Colors.py","r")
             code[currentLine] = colors.read()+"\n\n"+code[currentLine]
     
         withoutSpace = code[currentLine].replace(" ","");

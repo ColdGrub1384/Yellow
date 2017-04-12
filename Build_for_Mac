@@ -8,7 +8,7 @@ mkdir "$dir/Yellow for Mac/ROOT/usr"
 mkdir "$dir/Yellow for Mac/ROOT/usr/bin"
 cp $dir/Source/Yellow.py "$dir/Yellow for Mac/ROOT/usr/bin/Yellow"
 cp $dir/Source/Yellow_Shell.py "$dir/Yellow for Mac/ROOT/usr/bin/Yellow_Shell"
-chmod +x $dir/Source/Yellow_Shell.py "$dir/Yellow for Mac/ROOT/usr/bin/Yellow" "$dir/Yellow for Mac/ROOT/usr/bin/Yellow_Shell"
+chmod +x "$dir/Yellow for Mac/ROOT/usr/bin/Yellow" "$dir/Yellow for Mac/ROOT/usr/bin/Yellow_Shell";
 cp -R $dir/PYClasses "$dir/Yellow for Mac/ROOT/usr/bin/"
 pkgbuild --root "$dir/Yellow for Mac/ROOT" --identifier ch.ada.yellow --version $($dir/Yellow -v) $dir/Yellow.pkg
 rm -rf $dir/Yellow\ for\ Mac
