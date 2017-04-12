@@ -110,7 +110,7 @@ while (currentLine < len(code)):
         ## Colors
         code[currentLine] = code[currentLine].replace("print.header","header")
         code[currentLine] = code[currentLine].replace("print.okBlue","okBlue")          
-        code[currentLine] = code[currentLine].replace("print.okGreen","okGren")
+        code[currentLine] = code[currentLine].replace("print.okGreen","okGreen")
         code[currentLine] = code[currentLine].replace("print.warning","warning")
         code[currentLine] = code[currentLine].replace("print.failed","failed")          
         code[currentLine] = code[currentLine].replace("print.bold","bold")
