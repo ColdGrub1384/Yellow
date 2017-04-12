@@ -26,6 +26,7 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
     
     
 ## Code example
+``` json
     // Comment
 
     /* Multiline
@@ -78,6 +79,6 @@ NOTE: Yellow\_Shell command is not avaible for Windows, but you can use ```pytho
     
     \\n
     \\n
-    print{"1 != 1"}
+```
     
      
