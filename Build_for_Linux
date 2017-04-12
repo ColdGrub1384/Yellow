@@ -10,6 +10,7 @@ mkdir "$dir/Yellow for Linux/usr/bin";
 mkdir "$dir/Yellow for Linux/DEBIAN";
 cp $dir/Source/Yellow.py "$dir/Yellow for Linux/usr/bin/Yellow";
 cp $dir/Source/Yellow_Shell.py "$dir/Yellow for Linux/usr/bin/Yellow_Shell";
+chmod x $dir/Source/Yellow_Shell.py "$dir/Yellow for Linux/usr/bin/Yellow" "$dir/Yellow for Linux/usr/bin/Yellow_Shell"
 cp -R $dir/Source/PYClasses "$dir/Yellow for Linux/usr/bin/";
 printf "\nVersion: $($(echo $version))" >> "$dir/control";
 printf "\n" >> "$dir/control";
